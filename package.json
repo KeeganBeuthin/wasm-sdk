@@ -5,9 +5,15 @@
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist",
-    "copy-types": "copyfiles -u 1 src/*.d.ts dist/"
+    "copy-types": "copyfiles -u 1 src/*.d.ts dist/",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "moduleFileExtensions": ["js", "jsx", "ts", "tsx", "json", "node"]
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +21,8 @@
     "@babel/cli": "^7.24.5",
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
-    "copyfiles": "^2.4.1"
+    "babel-jest": "^29.7.0",
+    "copyfiles": "^2.4.1",
+    "jest": "^29.7.0"
   }
 }
